@@ -4,8 +4,19 @@
 from pydantic import BaseModel
 
 
-
-class ToDoSchema(BaseModel):
+# create , update 
+class ToDoSchemain(BaseModel):
     title:str
     description : str
-    complete:bool = False
+    completed:bool = False
+
+# get list , detail
+class ToDoSchemaout(BaseModel):
+    id: int 
+    title:str
+    description : str
+    completed:bool = False
+
+
+    class Config:
+        from_attributes = True
